@@ -269,7 +269,7 @@ export class BaileysStartupService extends ChannelStartupService {
   public async getProfileStatus() {
     const status = await this.client.fetchStatus(this.instance.wuid);
 
-    return status[0]?.status;
+    return status[0]?.status === '0';
   }
 
   public get profilePictureUrl() {
@@ -4577,4 +4577,3 @@ export class BaileysStartupService extends ChannelStartupService {
     };
   }
 }
-fix: correção de erros TS no build (status, offerCall, terminateCall)
