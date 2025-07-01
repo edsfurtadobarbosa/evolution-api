@@ -1783,7 +1783,7 @@ export class BaileysStartupService extends ChannelStartupService {
           name: info?.name,
           numberExists: info?.exists,
           picture: picture?.profilePictureUrl,
-          status: status?.status,
+          status: status[0]?.status === 'ok',
           isBusiness: business.isBusiness,
           email: business?.email,
           description: business?.description,
@@ -4577,3 +4577,4 @@ export class BaileysStartupService extends ChannelStartupService {
     };
   }
 }
+fix: correção de erros TS no build (status, offerCall, terminateCall)
